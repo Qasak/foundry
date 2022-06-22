@@ -214,6 +214,10 @@ async fn main() -> eyre::Result<()> {
             } else {
                 provider.get_chainid().await?.into()
             };
+            println!("sig: {} ", sig);
+            println!("args: {:?}", args);
+            println!("block: {:?}", block);
+            println!("eth: {:?}", eth);
 
             let mut builder =
                 TxBuilder::new(&provider, config.sender, address, chain, false).await?;
